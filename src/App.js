@@ -1,18 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import TodoItem from './components/todoItem'
+import todosData from './todosData'
 
 function App() {
+  const todoComponents = todosData.map(todo => <TodoItem todoFullData = {todo} key={todo.id}/>)
+  
   return (
-    <div className="App">
-      
-      <input type="checkbox" id="1"/>
-      <label htmlFor="1">Hacer la colada</label>
-      <input type="checkbox" id="2"/>
-      <label htmlFor="2">Tocar la guitarra</label>
-      <input type="checkbox" id="3"/>
-      <label htmlFor="3">Programar</label>
-
-
+    <div className="todo-list">
+      {todoComponents}
     </div>
   );
 }
